@@ -356,9 +356,13 @@ else
                         updatealert();
                         if(optionval==0)
                         {
-                            if (articlecmtid.length > 30) 
+                            if(articlecmtid.length > 30) 
                             {
                                 var shortcmt = articlecmtid.substring(0, 30) + "...";
+                            }
+                            else
+                            {
+                                var shortcmt=articlecmtid;
                             }
 
                             $('#tooltip'+sno).attr('title',articlecmtid);
