@@ -2,6 +2,7 @@
 include '../configure.php';
 include '../functions/php/helpers/curl.php';
 include '../includes/session_data.php';
+if($isclient==1){header("location:".$mybase."articles/");}else{}
 ?>
 <!DOCTYPE html>
 <html lang="en">
