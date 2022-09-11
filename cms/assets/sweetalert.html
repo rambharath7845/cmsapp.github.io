@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="<?php echo $mybase ?>assets/js/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+<script src="<?php echo $mybase ?>assets/js/plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<script type="text/javascript">
+
+  function insertalert() {
+    const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
+   Toast.fire({
+        icon: 'success',
+        title: 'Inserted Successfully'
+     })
+}
+
+
+function updatealert() {
+    const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
+   Toast.fire({
+        icon: 'success',
+        title: 'Updated Successfully'
+     })
+}
+
+function warningalert() {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+
+     Toast.fire({
+        icon: 'warning',
+        title: ' Something Went Wrong'
+      })
+}
+
+function customalert(message) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+
+     Toast.fire({
+        icon: 'warning',
+        title: message
+      })
+}
+ function deletealert() {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+
+    Toast.fire({
+        icon: 'error',
+        title: ' Deleted Successfully'
+      })
+}
+
+function loginalert() {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+
+     Toast.fire({
+        icon: 'warning',
+        title: ' UserName or Password is incorrect'
+      })
+}
+
+</script>
+

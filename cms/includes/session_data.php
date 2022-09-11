@@ -1,0 +1,24 @@
+<?php  
+if(isset($_SESSION['login_userid']))
+{
+$loginid=$_SESSION['login_userid'];
+$loginuser=$_SESSION['login_user'];
+$isclient=$_SESSION['isclient'];    
+$_COOKIE['login_userid']=$loginid;
+$_COOKIE['login_user']=$loginuser;
+$_COOKIE['isclient']=$isclient;
+}
+elseif(isset($_COOKIE['login_userid']))
+{
+$loginid=$_COOKIE['login_userid'];
+$loginuser=$_COOKIE['login_user'];
+$isclient=$_COOKIE['isclient'];
+$_SESSION['login_userid']=$loginid;
+$_SESSION['login_user']=$loginuser;
+$_SESSION['isclient']=$isclient;
+}
+else
+{
+	header("location:$mybase".''."index.php"); 
+}
+?>
