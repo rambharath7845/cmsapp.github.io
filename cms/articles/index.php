@@ -185,9 +185,9 @@ else
                                                         <td><a href="<?php echo $arrvalue['ArticleLink']; ?>"><?php echo $arrvalue['ArticleLink']; ?></a></td>
                                                         <td>
                                                             <?php if($isclient==1){ ?>
-                                                            <select class="form-control form-control-sm" id="currentstatusid<?php echo $sno; ?>" style="width:50%;">
-                                                                <option onclick="checkoptionval('<?php echo $mybase; ?>','<?php echo $sno; ?>','<?php echo $arrvalue['ArticleID'] ?>',this.value)" value="1" <?php if($arrvalue['CurrentStatus']==1){echo "selected";} ?>>Yes</option>
-                                                                <option onclick="checkoptionval('<?php echo $mybase; ?>','<?php echo $sno; ?>','<?php echo $arrvalue['ArticleID'] ?>',this.value)" value="0" <?php if($arrvalue['CurrentStatus']==0){echo "selected";} ?>>No</option>
+                                                            <select  onchange="checkoptionval('<?php echo $mybase; ?>','<?php echo $sno; ?>','<?php echo $arrvalue['ArticleID'] ?>',this.value)" class="form-control form-control-sm" id="currentstatusid<?php echo $sno; ?>" style="width:50%;">
+                                                                <option value="1" <?php if($arrvalue['CurrentStatus']==1){echo "selected";} ?>>Yes</option>
+                                                                <option value="0" <?php if($arrvalue['CurrentStatus']==0){echo "selected";} ?>>No</option>
                                                             </select>
                                                           <?php }else{ ?>
                                                             <?php echo $arrvalue['StatusLabel']; ?>
@@ -372,6 +372,15 @@ else
                         {
                             $("#cmtspan"+sno).html('');
                         }
+
+                            $("#articlecmtid").val('');
+                            $("#articlenoid").val('');
+                            $("#articlestatusid").val('');
+                            $("#articlerowid").val('');
+                            
+                            
+                            
+                            
                     }
                     else
                     {
