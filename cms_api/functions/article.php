@@ -37,7 +37,7 @@ class article
 	{	 
 		extract($postfields);
 
-		$article_update="UPDATE `2022_article` SET  `ArticleName`='$articlename', `ArticleLink`='$articlelink',`ModifiedBy`='$loginid', `ModifiedOn`=now() WHERE IsActive=1 AND `ArticleID`='$articleid' AND `ClientID`='$clientid' AND `CreatedBy`='$loginid'";
+		$article_update="UPDATE `2022_article` SET  `ArticleName`='$articlename', `ArticleLink`='$articlelink',`ModifiedBy`='$loginid', `ModifiedOn`=now() WHERE IsActive=1 AND `ArticleID`='$articleid' AND `ClientID`='$clientid'";
 		$article_exec=$this->dbconn->connection()->query($article_update);
 
 		if($article_exec)
@@ -54,7 +54,7 @@ class article
 	{	 
 		extract($postfields);
 
-		$article_update="UPDATE `2022_article` SET  `Comments`='$articlecmtid', `CurrentStatus`='$optionval',`ModifiedBy`='$loginid', `ModifiedOn`=now() WHERE IsActive=1 AND `ArticleID`='$articleid' AND `CreatedBy`='$loginid'";
+		$article_update="UPDATE `2022_article` SET  `Comments`='$articlecmtid', `CurrentStatus`='$optionval',`ModifiedBy`='$loginid', `ModifiedOn`=now() WHERE IsActive=1 AND `ArticleID`='$articleid' AND `ClientID`='$loginid'";
 		$article_exec=$this->dbconn->connection()->query($article_update);
 
 		if($article_exec)
@@ -71,7 +71,7 @@ class article
 	{	 
 		extract($postfields);
 
-		$article_delete="UPDATE `2022_article` SET  `ModifiedOn`=now(),`ModifiedBy`='$loginid',`IsActive`='0', `IsDelete`='1' WHERE `CreatedBy`='$loginid' AND `ArticleID`='$articleid' AND `ClientID`='$clientid'";
+		$article_delete="UPDATE `2022_article` SET  `ModifiedOn`=now(),`ModifiedBy`='$loginid',`IsActive`='0', `IsDelete`='1' WHERE `ArticleID`='$articleid' AND `ClientID`='$clientid'";
 		$article_exec=$this->dbconn->connection()->query($article_delete);
 
 		if($article_exec)
@@ -95,7 +95,7 @@ class article
 		}
 		else
 		{
-			$addqry="AND CreatedBy='$loginid'";
+			$addqry="AND ClientID='$loginid'";
 		}
 
 		if($mode=="filter")
